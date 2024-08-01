@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Two Array with While Loop</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ddd;
+            font-size: 110%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Notes</h1>
+        <ul>
+            <li>Understand case and solution with whiteboard</li>
+            <li>Make three array</li>
+            <li>Use while loop to Merge elements</li>
+            <li>Compare this logic with last one</li>
+            <li>Space Complexity - Memory(2KB, 1MB, etc) - how many variables was used in code for getting space complexity   </li>
+            <li>Time Complexity - Numbers of Lines taking by code</li>
+        </ul>
+    </div>
+
+    <script>
+        let data1 = [2, 5, 8, 11, 13, 17, 18];
+        let data2 = [4, 9, 25, 45];
+        let data3 = [];
+
+        let d1 = 0;
+        let d2 = 0;
+        let d3 = 0;
+
+        while (d1 < data1.length && d2 < data2.length) {
+            if (data1[d1] < data2[d2]) {
+                data3[d3] = data1[d1];
+                d1++;
+            }
+            else {
+                data3[d3] = data2[d2];
+                d2++;
+
+            }
+            d3++;
+        }
+
+        while(d2 < data2.length){
+            data3[d3] = data2[d2]
+            d2++;
+            d3++;
+        }
+        console.log(data3);
+    </script>
+</body>
+
+</html>

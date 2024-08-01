@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Insert</title>
+  <style>
+    body {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="element" placeholder="Enter element">
+  <input type="text" id="position" placeholder="Enter position">
+  <button onclick="insertElement()">Insert Element</button>
+
+  <script>
+    let data = [86, 11, 49, 26, 15];
+    // let newElm = 9;
+    // let position = 2;
+
+
+
+    // Approach - 1
+
+    // for (let i = data.length - 1; i >= 0; i--) {
+    //   if (i >= position) {
+    //     data[i + 1] = data[i];
+    //     if (i === position) {
+    //       data[i] = newElm;
+    //     }
+    //   }
+    // }
+    // console.log(data)
+
+    // Approach - 2
+    // const newData = [];
+    // data.forEach((item, index) => {
+    //   console.log(item, ':', index);
+    //   if (index === position) {
+    //     newData.push(newElm);
+    //   }
+    //   newData.push(item);
+    // })
+    // console.log(newData);
+    // function insertElement() {
+    //   let element = document.getElementById("element").value;
+    //   let position = parseInt(document.getElementById("position").value);
+    //   console.log(element);
+    //   console.log(position);
+    //   const newData = [];
+    //   if (position >= 0 && position <= data.length) {
+    //     data.forEach((item, index) => {
+    //       if (index === position) {
+    //         newData.push(parseInt(element));
+    //       }
+    //       newData.push(item);
+    //     });
+    //     console.log(newData);
+    //     return newData;
+    //   }
+    //   else {
+    //     console.log("Invalid Position");
+    //     return;
+    //   }
+    // }
+
+    function insertElement() {
+      let element = document.getElementById('element').value;
+      let position = parseInt(document.getElementById('position').value);
+      let i;
+      for (i = data.length - 1; i >= 0; i--) {
+        if (i >= position) {
+          data[i + 1] = data[i];
+          if (i === position) {
+            data[i] = parseInt(element);
+          }
+        }
+      }
+      console.log(data);
+    }
+    let emptyArray1 = Array(100);
+    let emptyArray2 = Array.from({length: 100});
+    let emptyArray3 = [];
+    let emptyArray4 = new Array(100).fill();
+    let i;
+    for(i = 0; i < 100; i++){
+      emptyArray3.push(i);
+    }
+    console.log("emptyArray1:", emptyArray1);
+    console.log("emptyArray2:", emptyArray2);
+    console.log("emptyArray3:", emptyArray3);
+  </script>
+</body>
+
+</html>

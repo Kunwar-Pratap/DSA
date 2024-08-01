@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Two Array</title>
+</head>
+
+<body>
+    <div>
+        <h1>Notes</h1>
+        <ul>
+            <li>Understand case and solution with whiteboard</li>
+            <li>Make three array</li>
+            <li>Use two different Loop to Merge element</li>
+            <li>Shortcut for Reverse array element(Default Function)</li>
+            <li>Shortcut for Merge array(Default function)</li>
+        </ul>
+    </div>
+
+    <script>
+        let data = [3, 7, 12, 34, 56, 90];
+        let data2 = [20, 30, 40, 50, 60];
+
+        let mergedData = [];
+
+        for (let i = 0; i <= data.length - 1; i++) {
+            // mergedData.push(data[i]);
+            mergedData[i] = data[i];
+        }
+        for(let i = 0; i <= data2.length - 1; i++){
+            // mergedData.push(data2[i]);
+            mergedData[data.length + i] = data2[i];
+        }
+
+        console.log(mergedData);
+
+        // Reverse array using default function
+        let data3 = [3, 7, 12, 34, 56, 90];
+            let data4 = [20, 30, 40, 50, 60];
+
+            let revData = data3.reverse();
+            console.log('Reverse array-', revData);
+
+        // Merge two array using spread operators
+        let merData = [...data, ...data2];
+        console.log(merData);
+
+    </script>
+</body>
+
+</html>

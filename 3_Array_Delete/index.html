@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Element</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #CCCCCC;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="position" placeholder="Enter position to be deleted">
+    <button onclick="handleDelete()">Delete Element</button>
+
+    <script>
+        let data = [30, 20, 35, 75, 90, 20];
+
+        // let position = 3;
+
+        // for (let i = position; i < data.length -1; i++){
+        //     data[i] = data[i+1];
+        //     // document.write(data[i], "<br/>");
+        // }
+        // data.length = data.length -1;
+        // console.log(data);
+
+function handleDelete (){
+    let position = parseInt(document.getElementById("position").value);
+    let i;
+    for (i = position; i < data.length - 1; i++){
+        // console.log(data[i]);
+        // console.log(data[i]);
+        data[i] = data[i + 1];
+        // console.log(data[i]);
+
+    }
+    data.length = data.length -1;
+    console.log(data);
+}
+    </script>
+</body>
+
+</html>
