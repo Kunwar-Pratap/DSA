@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sort</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ddd;
+            font-size: 110%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        let data = [40, 30, 12, 25];
+
+        for (let i = 0; i < data.length; i++) {
+            // console.log(1);
+            for(let j = 0; j < data.length; j++){
+                console.log(data);
+                if(data[j] > data[j + 1]){
+                    let temp = data[j];
+                    data[j] = data[j +1];
+                    data[j+1] = temp;
+                }
+            }
+        }
+
+        // console.log(data);
+    </script>
+</body>
+
+</html>
