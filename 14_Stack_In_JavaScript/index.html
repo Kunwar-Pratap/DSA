@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stack in JavaScript</title>
+</head>
+
+<body>
+  <header></header>
+  <main></main>
+  <footer></footer>
+
+  <script>
+    let data = [];
+    let currentSize = data.length;
+    let maxValue = 5;
+    console.log(currentSize);
+
+    console.log(data);
+    function push(ele) {
+      if (currentSize < maxValue) {
+        data[currentSize] = ele;
+        currentSize++;
+      }
+      else {
+        console.log("Stack is full")
+      }
+    }
+
+    push(20);
+    push(23);
+    push(24);
+    push(25);
+    push(266);
+    push(267);
+    push(268);
+
+    console.log(data);
+
+    function pop() {
+      if (currentSize > 0) {
+        currentSize--;
+        data.length = currentSize;
+      }
+      else {
+        console.log("Stack ids already empty");
+      }
+    }
+
+    pop();
+    pop();
+    pop();
+    pop();
+    console.log(data);
+  </script>
+</body>
+
+</html>
