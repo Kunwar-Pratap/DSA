@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <title>Stack with Inputs and Buttons</title>
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
 
-    <script>
-      
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Stack with Inputs and Buttons</title>
+  <style>
+    .wrapper {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header></header>
+  <main class="wrapper">
+    <div class="container">
+      <input type="text" id="element">
+      <button>Push Element</button>
+
+      <input type="text" id="element2">
+      <button>Delete Element</button>
+    </div>
+  </main>
+  <footer></footer>
+
+  <script>
+
+    function addElement() {
+      const element = parseInt(document.getElementById('element').value, 10);
+      const data = [];
+      for (let i = 0; i < data.length; i++) {
+
+      }
+    }
+  </script>
+</body>
+
 </html>
