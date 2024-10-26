@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reverse string with stack</title>
 </head>
+
 <body style="background-color: rgba(0, 0, 0, 0.7);">
-  
+
   <script>
-    
+    let data = [];
+    let currentSize = data.length;
+
+    function push(newVal) {
+      data[currentSize] = newVal;
+      currentSize += 1;
+    }
+
+    function pop() {
+      let lastRemovedElement = data[currentSize - 1];
+      currentSize -= 1;
+      data.length = currentSize;
+      return lastRemovedElement;
+    }
+
+    // push(20);
+    // push(40);
+    // pop();
+    // console.log(data)
+
+    function reverseString(item) {
+      // console.log(item);
+      for (let i = 0; i < item.length; i++) {
+        push(item[i]);
+      }
+
+      for (let j = 0; j < item.length; j++) {
+        // console.log(pop());
+        item[j] = pop();
+      }
+
+      // For reverse
+      // for(let i = item.length -1; i >= 0; i--){
+      //   push(item[i]);
+      // }
+    }
+
+    let str = "kunwar";
+    str = str.split("");
+    reverseString(str);
+    console.log(str);
+    str = str.join("");
+    console.log(str);
+
+    // console.log(data);
   </script>
 </body>
+
 </html>
