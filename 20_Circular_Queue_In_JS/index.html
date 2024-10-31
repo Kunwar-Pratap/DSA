@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular queue in JavaScript</title>
+</head>
+
+<body style="background-color: rgba(0,0,0,0.8);">
+
+  <script>
+    class Queue {
+      constructor(size) {
+        this.max = size;
+        this.items = new Array(size);
+        this.currentSize = 0;
+        this.rear = -1;
+        this.front = -1;
+      }
+
+      enqueue(newVal) {
+        if (this.currentSize != this.max) {
+          if (this.rear === this.max - 1) {
+            this.rear = 0;
+          }
+          else {
+            this.rear++;
+          }
+          this.items[this.rear] = newVal;
+          this.currentSize++;
+          if (this.front == -1) {
+            this.front = this.rear;
+          }
+        }
+      }
+
+      dequeue() {
+        if (this.currentSize != 0) {
+          this.items[this.front] = null;
+          if (this.front == this.max - 1) {
+            this.front = 0;
+          }
+          else {
+            this.front++;
+          }
+          this.currentSize--;
+        }
+        else {
+          this.front = -1;
+          this.rear = -1;
+          console.warn("Queue is empty!");
+        }
+      }
+    }
+
+    const queue = new Queue(5);
+    queue.enqueue(10);
+    queue.enqueue(20);
+    queue.enqueue(30);
+    queue.enqueue(40);
+    queue.enqueue(50);
+    queue.dequeue();
+    queue.enqueue(500);
+
+    console.log(queue);
+  </script>
+</body>
+
+</html>
