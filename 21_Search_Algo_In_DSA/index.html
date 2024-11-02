@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Algorithm in DSA</title>
+</head>
+
+<body style="background-color: rgba(0,0,0,0.8);">
+
+  <script>
+    let data = [10, 3, 9, 20, 23, 100, 9];
+    let position = undefined;
+    let val = 100;
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] === val) {
+        position = i;
+        break;
+      }
+    }
+    if (!position) console.warn("Element not found!");
+
+    // With function
+    
+    // function searcher(val) {
+    //   for (let i = 0; i < data.length; i++) {
+    //     if (data[i] === val) {
+    //       position = i;
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // }
+
+    // console.log(searcher(20));
+    console.log(position);
+  </script>
+</body>
+
+</html>
