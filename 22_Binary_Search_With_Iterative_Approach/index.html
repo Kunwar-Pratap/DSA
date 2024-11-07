@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search with Iterative approach</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8);">
+
+  <script>
+    let data = [3, 5, 7, 9];
+
+    let find =9;
+    let isElementAvailable = false;
+    let start = 0;
+    let end = data.length - 1;
+    let position = undefined;
+    while (start <= end) {
+      let mid = Math.floor((start + end) / 2);
+      // console.log(mid);
+      if (data[mid] === find) {
+        position = mid;
+        break;
+      }
+      else if(data[mid] < find){
+        start = mid+1;
+      }
+      else{
+        
+        end = mid-1;
+      }
+    }
+console.log(position);
+  </script>
+</body>
+
+</html>
