@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search with Recursive approach</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8);">
+
+  <script>
+    const data = [1, 3, 5, 7, 9, 11, 13, 15, 17];
+    const findValue = 9;
+    let start = 0;
+    let end = data.length - 1;
+    let position = undefined;
+
+    function recursiveBinarySearch(data, start, end) {
+      let mid = Math.floor((start + end) / 2); 
+      // alert(mid); //4= 9
+      if (data[mid] === findValue) {
+        position = mid;
+        return;
+      }
+      else if (data[mid] < findValue) {
+        recursiveBinarySearch(data, mid + 1, end);
+      }
+      else {
+        recursiveBinarySearch(data, start, mid - 1);
+      }
+    }
+
+    recursiveBinarySearch(data, start, end);
+    console.log(position);
+
+  </script>
+</body>
+
+</html>

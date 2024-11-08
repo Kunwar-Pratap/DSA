@@ -12,11 +12,11 @@
   <script>
     let data = [3, 5, 7, 9];
 
-    let find =9;
-    let isElementAvailable = false;
+    let find = 9;
     let start = 0;
     let end = data.length - 1;
     let position = undefined;
+
     while (start <= end) {
       let mid = Math.floor((start + end) / 2);
       // console.log(mid);
@@ -24,15 +24,16 @@
         position = mid;
         break;
       }
-      else if(data[mid] < find){
-        start = mid+1;
+      else if (data[mid] < find) {
+        start = mid + 1;
       }
-      else{
-        
-        end = mid-1;
+      else {
+
+        end = mid - 1;
       }
     }
-console.log(position);
+    
+    console.log(position);
   </script>
 </body>
 
