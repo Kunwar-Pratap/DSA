@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insertion Sort with JavaScript</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8);">
+
+  <script>
+    const data = [12, 11, 13, 5, 6];
+
+    function insertionSort(data) {
+      let i, j, temp;
+      for (i = 1; i < data.length; i++) {
+        // console.log(data[i]);
+        temp = data[i];
+        j = i - 1;
+        while (j >= 0 && data[j] > temp) {
+          data[j + 1] = data[j];
+          j--;
+        }
+        data[j+ 1] = temp;
+      }
+      console.log("temp:", temp);
+      console.log("j:", data[j]);
+    }
+
+    insertionSort(data);
+    console.log(data);
+  </script>
+</body>
+
+</html>
