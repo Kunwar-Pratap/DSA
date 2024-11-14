@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Anagram String with JavaScript</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+
+
+    function CheckAnagramStr(str1, str2) {
+      // console.log(str1, str2);
+      let str1Obj = {};
+      if (str1.length !== str2.length) {
+        return false;
+      }
+      for (chr of str1) {
+        // console.log(chr);
+        str1Obj[chr] = (str1Obj[chr] || 0) + 1;
+        // console.log(str1Obj[chr]);
+      }
+      for (chr of str2) {
+        console.log(chr);
+        if (!str1Obj[chr]) {
+          return false;
+        }
+        str1Obj[chr]--;
+      }
+      // console.log(str1Obj)
+      return true
+    }
+
+    console.log(CheckAnagramStr("hello", "elloh")); //true
+    console.log(CheckAnagramStr("hello", "elloo")); //false
+    console.log(CheckAnagramStr("cat", "act")); //true
+    console.log(CheckAnagramStr("cat", "caat")); //false
+
+  </script>
+</body>
+
+</html>
