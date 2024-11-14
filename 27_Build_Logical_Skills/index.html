@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Logical Skills</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+  <div>
+    <h1>Build Logical Skills</h1>
+    <ol>
+      <li>Step 1: Understand complete problem</li>
+      <li>Step 1: Find solution in general way (use copy pen)</li>
+      <li>Step 3: Divide problem into chunks</li>
+      <li>Step 4: Now think coding solution</li>
+      <li>Step 5: Re-analyze solution (for optimization)</li>
+      <li>Step 6: Now speak <q>Jai Shree Ram</q></li>
+      <li>Step 7: Now start writing code</li>
+    </ol>
+  </div>
+  <div>
+    <p>Problem:</p>
+    <p>
+      Find even value from array, make double of every element and find Array length manually
+    </p>
+  </div>
+  <script>
+    const data = [10, 19, 31, 22, 11, 100, 50, 7];
+    let evenData = [];
+    let length = 0;
+
+    function findEvenValues(data) {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] % 2 === 0) {
+          evenData.push(data[i] * 2);
+          length++;
+        }
+      }
+    }
+
+    findEvenValues(data);
+    console.log(evenData);
+    console.log(length);
+  </script>
+</body>
+
+</html>
