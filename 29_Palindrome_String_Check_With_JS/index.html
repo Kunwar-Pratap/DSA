@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Palindrome String with JavaScript</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+    // Approach 1 - just for fun (space complexity issue)
+
+
+    function CheckPalindromeStr(str) {
+      let strLow = str.toLowerCase();
+      let strArr = strLow.split('').reverse().join('');
+      if (strArr !== strLow) {
+        return false;
+      }
+      return true;
+    }
+
+    // Approach 2 - just for fun
+
+    function CheckPalindromeStr2(str) {
+      let strLow = str.toLowerCase();
+      let strArr = strLow.split('');
+      let revArr = [];
+      let newS = "";
+      for (let i = strArr.length - 1; i >= 0; i--) {
+        revArr.push(strArr[i]);
+      }
+      newS = revArr.join('');
+      if (newS !== strLow) {
+        return false
+      }
+      return true;
+    }
+
+    // Approach 3 - recommended
+
+    function CheckPalindromeStr3(str) {
+      let strLow = str.toLowerCase();
+      let strLen = strLow.length;
+      for (let i = 0; i < strLen / 2; i++) {
+        if (strLow[i] !== strLow[strLen - 1 - i]) {
+          return false
+        }
+      }
+
+      return true;
+    }
+
+    // Approach 4 -recommended
+
+    function CheckPalindromeStr4(str) {
+      let strLow = str.toLowerCase();
+      let start = 0;
+      let end = strLow.length - 1;
+      while (start < end) {
+        if (strLow[start] !== strLow[end]) {
+          return false;
+        }
+        start++;
+        end--
+      }
+      return true;
+    }
+
+    console.log(CheckPalindromeStr("Jahaj")); //true
+    console.log(CheckPalindromeStr("ChatGPT"));//false
+    console.log(CheckPalindromeStr("teT"));//true
+    console.log(CheckPalindromeStr("tet3")); //false
+
+    console.log(CheckPalindromeStr2("jahaJ")); //true
+    console.log(CheckPalindromeStr2("Python")); //false
+    console.log(CheckPalindromeStr2("tEt")); //true
+    console.log(CheckPalindromeStr2("tet3")); //false
+
+    console.log(CheckPalindromeStr4("teT")); //true
+ 
+
+  </script>
+
+</body>
+
+</html>
