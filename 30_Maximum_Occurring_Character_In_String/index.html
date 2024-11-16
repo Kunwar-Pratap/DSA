@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximum occurring character in string</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+    // Approach 1
+
+    function maxOccurrenceCheck1(str) {
+      let lowerStr = str.toLowerCase();
+      let strObj = {};
+      let maxChar = null;
+      let maxCount = 0;
+
+      if (lowerStr.length <= 0) {
+        return console.log("empty string");
+      }
+      for (let char of lowerStr) {
+        strObj[char] = (strObj[char] || 0) + 1;
+      }
+      for (let char in strObj) {
+        // console.log(char)
+        console.log(strObj[char])
+        if (strObj[char] > maxCount) {
+          maxCount = strObj[char];
+          maxChar = char;
+        }
+        // console.log(char);
+      }
+      console.log(`Character '${maxChar}' occurs the most with ${maxCount} times.`);
+      return { maxChar, maxCount };
+      // console.log(strObj);
+
+    }
+
+    // Approach 2
+
+    function maxOccurrenceCheck2(str) {
+      let lowerStr = str.toLowerCase();
+      let strObj = {};
+      let maxKey = "";
+      let maxKeyCount = 0;
+
+      for (let i = 0; i < lowerStr.length; i++) {
+        let key = lowerStr[i];
+        if (!strObj[key]) {
+          strObj[key] = 0;
+        }
+        strObj[key]++;
+      
+        if (strObj[key] > maxKeyCount) {
+          maxKey = key;
+          maxKeyCount = strObj[key];
+        }
+        // console.log(strObj[str[i]]);
+      }
+      console.log(strObj);
+      console.log(maxKey);
+      console.log(maxKeyCount);
+    }
+
+    // maxOccurrenceCheck1("Hello");
+    maxOccurrenceCheck2("Hello");
+
+  </script>
+
+</body>
+
+</html>
