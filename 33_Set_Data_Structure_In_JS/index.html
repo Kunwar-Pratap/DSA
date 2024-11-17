@@ -10,116 +10,109 @@
 <body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
 
   <script>
-  
-
-  let data = new Set(["Dishita", "Lime", "Excel", "Dishita"]);
-  // let items = ["Dishita", "Lime", "Excel", "Dishita"];
-
-  // console.log("Array:", items);
-  
-  data.add("Vercel"); // data.add("Vercel"); // Adding duplicate items will not add it again
-  // data.add({"name": "Kunwar"}); // adding object 
-  // data.add({"name": "Kunwar"}); // adding object will add it again
-  console.log("Set:", data);
-
-  console.log(data.size);
-
-  // data.clear();
-
-  // Removing an item
-  data.delete("Excel");
-  console.log("Set after deleting Excel:", data);
-
-  // Checking if an item exists
-  console.log("Is Dishita in Set?", data.has("Dishita")); // true
-
-  // Iterating over the set
-  for (let item of data) {
-    console.log("Item:", item);
-  }
-
-  // Iterating over the set using forEach
-  data.forEach(item => console.log(item));
-
-  console.log(data.values());
-  console.log(data.keys());
-  console.log(data.entries());
-
-  // Converting set to an array
-  let array = Array.from(data);
-  console.log("Array:", array);
-
-  // Converting set to an array and removing duplicates
-  let uniqueArray = [...new Set(array)];
-  console.log("Unique Array:", uniqueArray);
-
-  // Converting set to an object
-  let object = Array.from(data).reduce((obj, item) => {
-    obj[item] = true;
-    return obj;
-  }, {});
-  console.log("Object:", object);
-
-  // Converting set to a string
-  let string = Array.from(data).join(", ");
-  console.log("String:", string);
-
-  // Converting set to a JSON string
-  let jsonString = JSON.stringify([...data]);
-  console.log("JSON String:", jsonString);
-
-  // Converting set to a Map
-  let map = new Map(data.entries());
-  console.log("Map:", map);
-
-  // Converting set to a Map and removing duplicates
-  let uniqueMap = new Map([...new Set(data.entries())]);
-  console.log("Unique Map:", uniqueMap);
-
-  // Converting set to a Map and converting keys to uppercase
-  let uppercaseMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), value]));
-  console.log("Uppercase Map:", uppercaseMap);
-
-  // Converting set to a Map and converting values to lowercase
-  let lowercaseMap = new Map([...new Set(data.entries())].map(([key, value]) => [key, value.toLowerCase()]));
-  console.log("Lowercase Map:", lowercaseMap);
-
-  // Converting set to a Map and converting keys and values to uppercase
-  let uppercaseLowercaseMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), value.toLowerCase()]));
-  console.log("Uppercase/Lowercase Map:", uppercaseLowercaseMap);
-
-  // Converting set to a Map and converting keys and values to uppercase and adding a prefix
-  let uppercasePrefixMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), "prefix_" + value.toLowerCase()]));
-  console.log("Uppercase/Prefix Map:", uppercasePrefixMap);
-
-  // Converting set to a Map and converting keys and values to uppercase and adding a suffix
-  let uppercaseSuffixMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), value.toLowerCase() + "_suffix"]));
-  console.log("Uppercase/Suffix Map:", uppercaseSuffixMap);
-
-  // Converting set to a Map and converting keys and values to uppercase and adding a prefix and suffix
-  let uppercasePrefixSuffixMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), "prefix_" + value.toLowerCase() + "_suffix"]));
-  console.log("Uppercase/Prefix/Suffix Map:", uppercasePrefixSuffixMap);
-
-  // Converting set to a Map and converting keys and values to uppercase and adding a prefix and suffix with a separator
-  let uppercasePrefixSuffixSeparatorMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), "prefix_" + value.toLowerCase().replace(" ", "_") + "_suffix"]));
-  console.log("Uppercase/Prefix/Suffix/Separator Map:", uppercasePrefixSuffixSeparatorMap);
-
-  // Converting set to a Map and converting keys and values to uppercase and adding a prefix and suffix with a separator and converting keys to camel case
-  let uppercaseCamelCaseMap = new Map([
-    ...new Set(data.entries())
-  ].map(([key, value]) => [
-    key.toUpperCase().replace(/(?:^\w|[A-Z]|\b\w)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, ''),
-    value.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, '_')
-  ]));
-  console.log("Uppercase/CamelCase Map:", uppercaseCamelCaseMap);
-
-  </script>
-
-</body>
 
 
+    let data = new Set(["Dishita", "Lime", "Excel", "Dishita"]);
+    // let items = ["Dishita", "Lime", "Excel", "Dishita"];
 
-  console.log("Set:", data);
+    // console.log("Array:", items);
+
+    data.add("Vercel"); // data.add("Vercel"); // Adding duplicate items will not add it again
+    // data.add({"name": "Kunwar"}); // adding object 
+    // data.add({"name": "Kunwar"}); // adding object will add it again
+    console.log("Set:", data);
+
+    console.log(data.size);
+
+    // data.clear();
+
+    // Removing an item
+    data.delete("Excel");
+    console.log("Set after deleting Excel:", data);
+
+    // Checking if an item exists
+    console.log("Is Dishita in Set?", data.has("Dishita")); // true
+
+    // Iterating over the set
+    for (let item of data) {
+      console.log("Item:", item);
+    }
+
+    // Iterating over the set using forEach
+    data.forEach(item => console.log(item));
+
+    console.log(data.values());
+    console.log(data.keys());
+    console.log(data.entries());
+
+    // Converting set to an array
+    let array = Array.from(data);
+    console.log("Array:", array);
+
+    // Converting set to an array and removing duplicates
+    let uniqueArray = [...new Set(array)];
+    console.log("Unique Array:", uniqueArray);
+
+    // Converting set to an object
+    let object = Array.from(data).reduce((obj, item) => {
+      obj[item] = true;
+      return obj;
+    }, {});
+    console.log("Object:", object);
+
+    // Converting set to a string
+    let string = Array.from(data).join(", ");
+    console.log("String:", string);
+
+    // Converting set to a JSON string
+    let jsonString = JSON.stringify([...data]);
+    console.log("JSON String:", jsonString);
+
+    // Converting set to a Map
+    let map = new Map(data.entries());
+    console.log("Map:", map);
+
+    // Converting set to a Map and removing duplicates
+    let uniqueMap = new Map([...new Set(data.entries())]);
+    console.log("Unique Map:", uniqueMap);
+
+    // Converting set to a Map and converting keys to uppercase
+    let uppercaseMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), value]));
+    console.log("Uppercase Map:", uppercaseMap);
+
+    // Converting set to a Map and converting values to lowercase
+    let lowercaseMap = new Map([...new Set(data.entries())].map(([key, value]) => [key, value.toLowerCase()]));
+    console.log("Lowercase Map:", lowercaseMap);
+
+    // Converting set to a Map and converting keys and values to uppercase
+    let uppercaseLowercaseMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), value.toLowerCase()]));
+    console.log("Uppercase/Lowercase Map:", uppercaseLowercaseMap);
+
+    // Converting set to a Map and converting keys and values to uppercase and adding a prefix
+    let uppercasePrefixMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), "prefix_" + value.toLowerCase()]));
+    console.log("Uppercase/Prefix Map:", uppercasePrefixMap);
+
+    // Converting set to a Map and converting keys and values to uppercase and adding a suffix
+    let uppercaseSuffixMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), value.toLowerCase() + "_suffix"]));
+    console.log("Uppercase/Suffix Map:", uppercaseSuffixMap);
+
+    // Converting set to a Map and converting keys and values to uppercase and adding a prefix and suffix
+    let uppercasePrefixSuffixMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), "prefix_" + value.toLowerCase() + "_suffix"]));
+    console.log("Uppercase/Prefix/Suffix Map:", uppercasePrefixSuffixMap);
+
+    // Converting set to a Map and converting keys and values to uppercase and adding a prefix and suffix with a separator
+    let uppercasePrefixSuffixSeparatorMap = new Map([...new Set(data.entries())].map(([key, value]) => [key.toUpperCase(), "prefix_" + value.toLowerCase().replace(" ", "_") + "_suffix"]));
+    console.log("Uppercase/Prefix/Suffix/Separator Map:", uppercasePrefixSuffixSeparatorMap);
+
+    // Converting set to a Map and converting keys and values to uppercase and adding a prefix and suffix with a separator and converting keys to camel case
+    let uppercaseCamelCaseMap = new Map([
+      ...new Set(data.entries())
+    ].map(([key, value]) => [
+      key.toUpperCase().replace(/(?:^\w|[A-Z]|\b\w)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, ''),
+      value.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, '_')
+    ]));
+    console.log("Uppercase/CamelCase Map:", uppercaseCamelCaseMap);
+
   </script>
 
 </body>
