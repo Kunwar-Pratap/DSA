@@ -20,7 +20,9 @@
         pincode: 110001,
       },
       email: "xyz@zyx.com",
-      getName: () => { return this.name },
+      getName: function (){
+        return this.name;
+      },
     };
 
     obj.contact = {
@@ -37,10 +39,12 @@
     // get all properties (array form)
     console.log(Object.keys(obj));
     console.log(Object.values(obj));
-    
+
     // get all properties (key-value pairs)
     console.log(Object.entries(obj));
 
+    console.log(obj.getName());
+    
     console.log(obj);
 
     
