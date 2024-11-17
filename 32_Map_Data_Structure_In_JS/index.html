@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Data Structure in JavaScript</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+    //  an empty Map
+    // const data = new Map();
+    // console.log(data);
+
+    // with key values
+
+    const data = new Map([
+      ['name', 'Kunwar'],
+      [1, 'number key'],
+      [false, 'boolean key'],
+      [undefined, null],
+    ]);
+
+    //  add value
+    data.set(null, 0);
+
+    // get size
+    console.log(data.size);
+
+    // get value by key
+    console.log(data.get(1));
+
+    // delete value by key
+    data.delete(1);
+
+    // check if key exists
+    console.log(data.has(1));
+
+    // clear all entries
+    // data.clear();
+
+    // print the updated map
+    console.log(data);
+
+    // iterate over the map
+    for (const [key, value] of data) {
+      console.log(`Key: ${key}, Value: ${value}`);
+    }
+
+    // get all keys
+    for (const key of data) {
+      console.log(key[0]);
+    }
+
+    // get all values
+    for (const value of data) {
+      console.log(value[1]);
+    }
+
+    // get all key-values using foreach loop
+    data.forEach((value, key) => {
+      console.log(`Key: ${key}, Value: ${value}`);
+    });
+
+    // get all keys using foreach loop
+    data.forEach((_, key) => {
+      console.log(`Key: ${key}`);
+    });
+
+    // get all values using foreach loop
+    data.forEach((value, _) => {
+      console.log(`Value: ${value}`);
+    });
+
+    // convert to array of entries
+    console.log(Array.from(data.entries()));
+
+    // convert to array of keys
+    console.log(Array.from(data.keys()));
+
+    // convert to array of values
+    console.log(Array.from(data.values()));
+
+    // convert to object
+    console.log(Object.fromEntries(data));
+    // console.log(data);
+
+  </script>
+
+</body>
+
+</html>
