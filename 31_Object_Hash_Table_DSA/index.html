@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object (Hash Table) Data Structure</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+    let obj = {
+      name: "Kunwar Pratap",
+      age: 30,
+      address: {
+        street: "123 Main St",
+        city: "New Delhi",
+        state: "DL",
+        pincode: 110001,
+      },
+      email: "xyz@zyx.com",
+      getName: () => { return this.name },
+    };
+
+    obj.contact = {
+      phone: "1234567890",
+      alternatePhone: "9876543210",
+    };
+
+    // check a property
+    console.log(obj.hasOwnProperty("name"));
+
+    for (key in obj){
+      console.log(key)
+    }
+    // get all properties (array form)
+    console.log(Object.keys(obj));
+    console.log(Object.values(obj));
+    
+    // get all properties (key-value pairs)
+    console.log(Object.entries(obj));
+
+    console.log(obj);
+
+    
+  </script>
+
+</body>
+
+</html>
