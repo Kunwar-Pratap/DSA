@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Node from Linked List</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+
+    class List {
+      constructor(val) {
+        this.head = {
+          value: val,
+          next: null
+        }
+        this.tail = this.head;
+        this.size = 1;
+      }
+      appendNode(nodeData) {
+        let newNode = {
+          value: nodeData,
+          next: null,
+        }
+        this.tail.next = newNode;
+        this.tail = newNode;
+        this.size++;
+      }
+      traversing() {
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter < this.size) {
+          // console.log(currentNode);
+          currentNode = currentNode.next;
+          counter++;
+        }
+      }
+      removeNode(index) {
+        let counter = 1;
+        let leadNode = this.head;
+        if (index === 1) {
+          leadNode = leadNode.next;
+        }
+        while (counter < index - 1) {
+          leadNode = leadNode.next;
+          counter++;
+        }
+        let nextNode = leadNode.next.next;
+        leadNode.next = nextNode;
+      }
+    }
+
+    const newList = new List(100);
+    newList.appendNode(200);
+    newList.appendNode(300);
+    newList.appendNode(400);
+    newList.appendNode(500);
+    newList.appendNode(600);
+    newList.traversing();
+    newList.removeNode(4);
+    console.log(newList);
+
+  </script>
+
+</body>
+
+</html>
