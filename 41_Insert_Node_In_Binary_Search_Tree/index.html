@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Node in Binary Search Tree</title>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8); color: #ddd;">
+
+  <script>
+    class Node {
+      constructor(val) {
+        this.value = val;
+        this.left = null;
+        this.right = null;
+      }
+    }
+
+    class BinarySearchTree {
+      constructor() {
+        this.root = null;
+
+      }
+      isTreeEmpty() {
+        return this.root === null;
+      }
+      makeTree(val) {
+        let newNode = new Node(val)
+        if (this.root === null) {
+          this.root = newNode;
+        }
+        else {
+          this.insertNode(this.root, newNode);
+        }
+      }
+      insertNode(root, newNode) {
+        if (root.value > newNode.value) {
+          if(root.left === null){
+            root.left = newNode;
+          }
+          else{
+            this.insertNode(root.left, newNode);
+          }   
+        }
+        else{
+          if(root.right === null){
+            root.right = newNode;
+          }
+          else{
+            this.insertNode(root.right, newNode);
+          }
+        }
+      }
+    }
+
+    const newBST = new BinarySearchTree();
+    newBST.makeTree(20);
+    newBST.makeTree(10);
+    newBST.makeTree(5);
+    newBST.makeTree(30);
+    newBST.makeTree(50);
+    // console.log(newBST.isTreeEmpty());
+    console.log(newBST);
+
+  </script>
+
+</body>
+
+</html>
